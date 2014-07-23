@@ -7,8 +7,7 @@ BWV_RE = re.compile(r'BWV\s*[0-9]+[A-z]?', re.I)
 bach_dict = {}
 
 for b in BWV_RE.findall(uc):
-    bach_dict[b.upper()] = ''
-.upper()
+    bach_dict[b.lower().replace('bwv', 'BWV')] = ''
 out = codecs.open('bwv_out.txt', 'w', 'utf8')
 
 for k in bach_dict.keys():
